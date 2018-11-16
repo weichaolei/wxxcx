@@ -1,0 +1,19 @@
+<!--pages/addgift/addgift.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section">
+    <view class="section__title">姓名</view>
+    <input name="name" placeholder="张三" />
+  </view>
+  <view class="section">
+    <view class="section__title">金额</view>
+    <input name="money" placeholder="100" />
+  </view>
+  <view class="section">
+    <view class="section__title">日期</view>
+    <input name="date" placeholder="2018-11-13" />
+  </view>
+  <view class="btn-area">
+    <button formType="submit">提交</button>
+    <button formType="reset">重置</button>
+  </view>
+</form>

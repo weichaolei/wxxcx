@@ -56,6 +56,21 @@ Page({
    * 点击我的份子按钮
    */
   clickMe: function () {
+    // var cashListData = []
+    // // 缓存数据
+    // wx.getStorage({
+    //   key: 'cashObj',
+    //   success: function (res) {
+    //     var storeData = res.data
+    //     console.log("localdata" + storeData)
+    //     var len = storeData.length
+    //     for (var i = 0; i < len; i++) {
+    //       console.log("bendi123:" + storeData[i])
+    //       cashListData.push(storeData[i])
+    //     }
+    //   }
+    // })
+
     wx.navigateTo({
       url: '../gift/gift',
     })

@@ -1,57 +1,32 @@
-// pages/gift/gift.js
-
-var that = {}
-
+// pages/addgift/addgift.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    listData: null
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    that = this
-    try {
-      var localData = wx.getStorageSync('cashObj')
-      console.log("localData" + localData)
-      that.setData({
-        listData: localData
-      })
-    } catch (e) {
 
-    }
-    // // 缓存数据
-    // wx.getStorage({
-    //   key: 'cashObj',
-    //   success: function (res) {
-    //     var storeData = res.data
-    //     console.log("localdata" + storeData)
-    //     var len = storeData.length
-    //     for (var i = 0; i < len; i++) {
-    //       console.log("bendi123:" + storeData[i])
-    //       cashListData.push(storeData[i])
-    //     }
-    //   }
-    // })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
@@ -89,12 +64,20 @@ Page({
 
   },
 
-  /**
-   * 跳转到添加份子页面
-   */
-  addGiftPage: function () {
+  formSubmit: function (e) {
+    
+    var oldRow = []
+    try {
+      oldRow = wx.getStorageSync("cashObj")
+      // 新记录
+      var obj = e.detail.value
+      oldRow.push(obj)
+      wx.setStorageSync('cashObj', oldRow)
+    } catch (e) {
+
+    }
     wx.navigateTo({
-      url: '../addgift/addgift',
+      url: '../gift/gift',
     })
   }
 })
